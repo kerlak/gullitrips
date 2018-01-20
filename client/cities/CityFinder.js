@@ -30,23 +30,25 @@ class CityFinder extends Component {
   }
 
   renderCity(city) {
-    console.log(city)
     return <City key={city._id} name={city.name} country={city.country}/>
   }
 
   render() {
     const cities = this.state.similarCities
     return (
-      <div>
+      <div className="cityFinder">
+      <div className="input">
         <input type="text" onChange={(e) => this.getSimilarCities(e.target.value)}/>
-        <ul>
-          {
-            cities.length > 0 ?
+      </div>
+
+        {
+          cities.length > 0 ?
+            <ul>
               cities.map(this.renderCity)
-            :
-              null
-          }
-        </ul>
+            </ul>
+          :
+            null
+        }
       </div>
     )
   }

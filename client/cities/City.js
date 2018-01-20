@@ -4,7 +4,7 @@ class City extends Component {
 
   render() {
     return (
-      <li>
+      <li className="city">
         <div>{this.props.name}</div>
         <div>{this.props.country}</div>
       </li>
