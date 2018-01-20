@@ -1,31 +1,21 @@
 import React, { Component } from 'react';
-
-import { withTracker } from 'meteor/react-meteor-data';
-import {Cities} from '../imports/Cities'
+import CityFinder from './cities/CityFinder'
 
 // App component - represents the whole app
 class App extends Component {
   render() {
-
-    const cities = this.props.cities
-    console.log(cities)
     return (
       <div className="container">
         <header>
-          <h1>Todo List</h1>
+
         </header>
+        
         <ul>
-          {cities.map((city,idx)=><li key={idx}>{city.name} ({city.country})</li>)}
+          <CityFinder />
         </ul>
       </div>
     );
   }
 }
 
-
-export default withTracker(() => {
-
-  return {
-    cities: Cities.find().fetch(),
-  };
-})(App);
+export default App
