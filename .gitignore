@@ -1,0 +1,4 @@
+# ------------- meteor gitignore
+
+.meteor/local
+node_modules
