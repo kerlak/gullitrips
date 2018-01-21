@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Home from './container/Home'
 import CityPaths from './container/CityPaths'
+import Path from './container/Path'
 import MapThumb from './paths/MapThumb'
 
 // App component - represents the whole app
@@ -12,7 +13,8 @@ class App extends Component {
       view: 1,
       city_id: null,
       city_name: null,
-      city_paths: []
+      city_paths: [],
+      city_path: null
     }
 
     this.selectCity = this.selectCity.bind(this)
@@ -30,6 +32,10 @@ class App extends Component {
     })
   }
 
+  selectPath(path){
+    this.setState({view: 3, city_path: path})
+  }
+
   goHome(){
     this.setState({view: 1, city_id: null, city_paths: []})
   }
@@ -39,7 +45,14 @@ class App extends Component {
       case 1:
         return <Home selectCity={this.selectCity} goHome={this.goHome}/>
       case 2:
-        return <CityPaths cityPaths={this.state.city_paths} cityName={this.state.city_name} goHome={this.goHome}/>
+        return <CityPaths
+                    cityPaths={this.state.city_paths}
+                    cityName={this.state.city_name}
+                    selectPath={this.state.selectPath}
+                    goHome={this.goHome}
+                />
+      case 3:
+        return <Path cityPath={this.state.city_path} cityName={this.state.city_name} goHome={this.goHome}/>
       default:
         return
     }

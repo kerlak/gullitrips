@@ -11,9 +11,14 @@ class CityPaths extends Component {
     this.drawPathCard = this.drawPathCard.bind(this)
   }
 
+  selectPath(e, path) {
+    e.preventDefault()
+    this.props.selectPath(path)
+  }
+
   drawPathCard(path) {
     return (
-      <div className="path_card">
+      <div className="path_card" onClick={(e) => this.selectPath(e, path)}>
         <div className="map">
           {React.createElement(MapThumb, {path:path})}
         </div>
