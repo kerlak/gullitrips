@@ -10,7 +10,7 @@ class TopNav extends Component {
   render() {
     return (
       <div className="top_nav">
-        <h3 id="logo" className="app_name">GulliTrips</h3>
+        <h3 id="logo" className="app_name" onClick={this.props.goHome}>GulliTrips</h3>
         <Avatar />
       </div>
     );

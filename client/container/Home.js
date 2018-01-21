@@ -13,7 +13,7 @@ class Home extends Component {
     return (
       <div className="container">
         <div className="home_header">
-          <TopNav />
+          <TopNav goHome={this.props.goHome}/>
           <div className="map translucid">
             {React.createElement(MapWithADirectionsRenderer, {})}
           </div>

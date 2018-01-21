@@ -11,10 +11,11 @@ class App extends Component {
     this.state = {
       view: 1,
       city: null,
-      paths: []
+      city_paths: []
     }
 
     this.selectCity = this.selectCity.bind(this)
+    this.goHome = this.goHome.bind(this)
   }
 
 
@@ -24,19 +25,20 @@ class App extends Component {
       view = 2
     }
     Meteor.call('getCityPaths', city, (error, city_paths)=>{
-      console.log('citytpaaath',city_paths)
       if(!error) this.setState({city, view, city_paths})
     })
+  }
 
-
+  goHome(){
+    this.setState({view: 1, city: null, city_paths: []})
   }
 
   render() {
     switch(this.state.view){
       case 1:
-        return <Home selectCity={this.selectCity}/>
+        return <Home selectCity={this.selectCity} goHome={this.goHome}/>
       case 2:
-        return <CityPaths city_paths={this.state.city_paths}/>
+        return <CityPaths city_paths={this.state.city_paths} goHome={this.goHome}/>
       default:
         return
     }
