@@ -16,10 +16,13 @@ class App extends Component {
 
 
   selectCity(city){
-    this.setState({city: city})
-    if(this.state.city != null) {
-      this.setState({view: 2})
+    console.log("mierda")
+    const view = 1
+    if(city != null || city == this.state.city) {
+      view = 2
     }
+    this.setState({city, view})
+
   }
 
   render() {

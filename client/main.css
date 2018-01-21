@@ -53,18 +53,20 @@ ul {
 }
 
 .cityFinder .city {
+  cursor: pointer;
+  display: block;
   margin: 1px;
   padding: 4px 4px 4px 20px;
   display: block;
   background-color: white;
-  border-radius: 5px;
 }
 
 .cityFinder .city .name {
-
+  color: #222
 }
 
 .cityFinder .city .country {
+  color: #777;
   font-size: 15px;
 }
 
