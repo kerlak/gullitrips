@@ -10,7 +10,7 @@ import {
 //key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg
 export default MapThumb = compose(
   withProps({
-    googleMapURL: "https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places",
+    googleMapURL: "https://maps.googleapis.com/maps/api/js?&key=AIzaSyD7aaeSGh3oTwLZVqEotPTwylgYtwfUYZ4&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `100px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
