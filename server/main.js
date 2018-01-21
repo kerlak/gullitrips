@@ -6,14 +6,9 @@ import {Paths} from '../imports/Paths'
 import {Cities} from '../imports/Cities'
 
 Meteor.startup(() => {
-  if( Cities.find().fetch().length == 0 ){
+  if( Paths.find().fetch().length == 0 ){
 
     //var cities = require('cities.json')
-    const cities = [
-      {name:'Madrid', country: 'ES'},
-      {name:'Barcelona', country: 'ES'},
-      {name:'Sevilla', country: 'ES'},
-    ]
     const path = {
         name: 'Awesome Path',
         description: 'Description of an awesome path',
@@ -46,9 +41,8 @@ Meteor.startup(() => {
         rating: 4
       }
     ]
-    var last_city_id=null
-    for(let city of cities) last_city_id = Cities.insert(city)
-    path.city_id = last_city_id
+
+    path.city_id = "1252"
     for(let cp of checkpoints){
       let cp_id = Checkpoints.insert(cp)
       path.checkpoints.push(cp_id)

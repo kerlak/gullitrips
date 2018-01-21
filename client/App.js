@@ -28,6 +28,7 @@ class App extends Component {
       view = 2
     }
     Meteor.call('getCityPaths', city_id, (error, city_paths)=>{
+      console.log(city_paths)
       if(!error) this.setState({city_id, view, city_name, city_paths})
     })
   }

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { HTTP } from 'meteor/http'
 
 import { withTracker } from 'meteor/react-meteor-data';
-import {Cities} from '../../imports/Cities'
 import City from './City'
 
-class CityFinder extends Component {
+export default class CityFinder extends Component {
 
   constructor(props) {
     super(props)
@@ -48,7 +47,7 @@ class CityFinder extends Component {
           <input type="text" onChange={(e) => this.getSimilarCities(e.target.value)}/>
         </div>
         {
-          cities.length > 0 ?
+          cities && cities.length > 0 ?
             <ul className="cityList">
               { cities.map(this.renderCity) }
             </ul>
@@ -59,9 +58,3 @@ class CityFinder extends Component {
     )
   }
 }
-
-export default withTracker(() => {
-  return {
-    //cities: Cities.find().fetch(),
-  };
-})(CityFinder);
