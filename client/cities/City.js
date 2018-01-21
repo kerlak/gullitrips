@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 
 class City extends Component {
-
-  preventDefault(e, fun) {
-    e.preventDefault()
-    fun()
+  constructor(props) {
+    super(props)
   }
-
   render() {
+    const {name, country, id, selectCity} = this.props
     return (
-      <li className="city" onClick={() => this.props.selectCity(this.props.id)}>
-        <div className="name">{this.props.name}</div>
-        <div className="country">{this.props.country}</div>
+      <li className="city" onClick={() => selectCity(id)}>
+        <div className="name">{name}</div>
+        <div className="country">{country}</div>
       </li>
     )
   }
