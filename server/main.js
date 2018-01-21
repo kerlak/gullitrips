@@ -7,14 +7,9 @@ import {Cities} from '../imports/Cities'
 import {Hotels} from '../imports/Hotels'
 
 Meteor.startup(() => {
-  if( Cities.find().fetch().length == 0 ){
+  if( Paths.find().fetch().length == 0 ){
 
     //var cities = require('cities.json')
-    const cities = [
-      {name:'Madrid', country: 'ES'},
-      {name:'Barcelona', country: 'ES'},
-      {name:'Sevilla', country: 'ES'},
-    ]
     const path = {
         name: 'Awesome Path',
         description: 'Description of an awesome path',
@@ -35,8 +30,8 @@ Meteor.startup(() => {
       {
         name: 'Another checkpoint',
         description: 'Some checkpoint',
-        lat: 44,
-        lon: -4,
+        lat: 40.4531989,
+        lon: -3.6965338,
         rating: 4
       },
       {
@@ -45,11 +40,31 @@ Meteor.startup(() => {
         lat: 40.465511,
         lon: -3.6187617,
         rating: 4
+      },
+      {
+        name: 'Another checkpoint 2',
+        description: 'Some checkpoint 2',
+        lat: 40.475511,
+        lon: -3.6187617,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 3',
+        description: 'Some checkpoint 2',
+        lat: 40.475511,
+        lon: -3.6787617,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 4',
+        description: 'Some checkpoint 2',
+        lat: 40.485511,
+        lon: -3.6187617,
+        rating: 4
       }
     ]
-    var last_city_id=null
-    for(let city of cities) last_city_id = Cities.insert(city)
-    path.city_id = last_city_id
+
+    path.city_id = "1252"
     for(let cp of checkpoints){
       let cp_id = Checkpoints.insert(cp)
       path.checkpoints.push(cp_id)

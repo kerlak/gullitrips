@@ -9,10 +9,10 @@ class CityPaths extends Component {
     super(props)
 
     this.drawPathCard = this.drawPathCard.bind(this)
+    this.selectPath = this.selectPath.bind(this)
   }
 
   selectPath(e, path) {
-    e.preventDefault()
     this.props.selectPath(path)
   }
 
@@ -24,7 +24,9 @@ class CityPaths extends Component {
         </div>
         <div className="path_hour_rating">
           <div className="hour">{path.hours} h</div>
-          <div className="rating">{path.rating}</div>
+          <div className="rating">
+            {path.rating} <i class="fa fa-star" aria-hidden="true"></i>
+          </div>
         </div>
       </div>
     )

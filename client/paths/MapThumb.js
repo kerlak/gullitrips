@@ -48,12 +48,20 @@ export default MapThumb = compose(
   })
 )(props =>
   <GoogleMap
+    defaultOptions={{
+      scrollwheel: false,
+      draggable: false,
+      disableDefaultUI: true
+    }}
     defaultZoom={10}
     defaultCenter={new google.maps.LatLng(40.4299878,-3.6960338)}
-    disableDefaultUI={true}
   >
     {props.directions && <DirectionsRenderer
-      preserveViewport={true}
+      defaultOptions={{
+        suppressMarkers: true,
+        preserveViewport: false,
+        disableDefaultUI: true
+      }}
       directions={props.directions} />}
   </GoogleMap>
 )
