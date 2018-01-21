@@ -63,8 +63,11 @@ export default MapWithADirectionsRenderer = compose(
 )(props =>
   <GoogleMap
     defaultZoom={4}
-    disableDefaultUI="true"
-    draggable="false"
+    defaultOptions={{
+      scrollwheel: false,
+      draggable: false,
+      disableDefaultUI: true
+    }}
     defaultCenter={new google.maps.LatLng(51.405515, 8.5779502)}
   />
 )

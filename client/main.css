@@ -214,14 +214,32 @@ ul {
   position: absolute;
   max-height: 100%;
   width: 100%;
+  z-index: 1;
 
-  -webkit-box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
-  -moz-box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
-  box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+}
+
+.city_intro .checkpoint_map {
+  position: relative;
+  max-height: 100%;
+  width: 100%;
+  z-index: 0;
+  height: 40vh !important;
+
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+}
+
+.checkpoint_map > div:first-child {
+  height: 40vh !important;
 }
 
 .city_intro .city_name {
   position: absolute;
+  z-index: 1;
   bottom: 0;
   padding: 10px;
   padding-top: 40px;
