@@ -18,6 +18,8 @@ Meteor.startup(() => {
         name: 'Awesome Path',
         description: 'Description of an awesome path',
         tags: ['awesome','party'],
+        rating: 4.2,
+        hours: 1.7,
         checkpoints: []
     }
 
@@ -51,6 +53,12 @@ Meteor.startup(() => {
       let cp_id = Checkpoints.insert(cp)
       path.checkpoints.push(cp_id)
     }
+    Paths.insert(path)
+    Paths.insert(path)
+    Paths.insert(path)
+    Paths.insert(path)
+    Paths.insert(path)
+    Paths.insert(path)
     Paths.insert(path)
   }
 })
