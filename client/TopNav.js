@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Avatar from '../Avatar'
+import Avatar from './Avatar'
 
 // App component - represents the whole app
 class TopNav extends Component {
@@ -10,7 +10,7 @@ class TopNav extends Component {
   render() {
     return (
       <div className="top_nav">
-        <h3 className="app_name">Gullitrips</h3>
+        <h3 id="logo" className="app_name">GulliTrips</h3>
         <Avatar />
       </div>
     );

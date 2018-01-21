@@ -4,7 +4,7 @@ import TopNav from '../TopNav'
 import MapWithADirectionsRenderer from '../MyMapComponent'
 
 // App component - represents the whole app
-class Home extends Component {
+class CityPaths extends Component {
   constructor(props) {
     super(props)
   }
@@ -14,14 +14,11 @@ class Home extends Component {
       <div className="container">
         <div className="home_header">
           <TopNav />
-          <div className="map translucid">
-            {React.createElement(MapWithADirectionsRenderer, {})}
-          </div>
+          <div className="map">{React.createElement(MapThumb, {path:this.props.paths[0]})}</div>
         </div>
-        <CityFinder selectCity={this.props.selectCity}/>
       </div>
     );
   }
 }
 
-export default Home
+export default CityPaths
