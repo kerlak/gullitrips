@@ -7,7 +7,7 @@ class City extends Component {
   render() {
     const {name, country, id, selectCity} = this.props
     return (
-      <li className="city" onClick={() => selectCity(id)}>
+      <li className="city" onClick={() => selectCity(id, name)}>
         <div className="name">{name}</div>
         <div className="country">{country}</div>
       </li>

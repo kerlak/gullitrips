@@ -26,15 +26,15 @@ class CityPaths extends Component {
   }
 
   render() {
-    const { city_paths } = this.props
-    let paths = city_paths.paths
+    const { cityPaths, cityName } = this.props
+    let paths = cityPaths.paths
     return (
       <div className="container">
         <div className="home_header">
           <TopNav goHome={this.props.goHome}/>
           <div className="city_intro">
-            <img className="city_photo" src={city_paths.photo_url} style={{width:'100%'}}/>
-            <div className="city_name">city_paths.name</div>
+            <img className="city_photo" src={cityPaths.photo_url} style={{width:'100%'}}/>
+            <div className="city_name">{cityName}</div>
           </div>
         </div>
           <div className="path_list">

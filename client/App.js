@@ -10,7 +10,8 @@ class App extends Component {
 
     this.state = {
       view: 1,
-      city: null,
+      city_id: null,
+      city_name: null,
       city_paths: []
     }
 
@@ -19,18 +20,18 @@ class App extends Component {
   }
 
 
-  selectCity(city){
+  selectCity(city_id, city_name){
     const view = 1
-    if(city != null || city == this.state.city) {
+    if(city_id != null || city_id == this.state.city_id) {
       view = 2
     }
-    Meteor.call('getCityPaths', city, (error, city_paths)=>{
-      if(!error) this.setState({city, view, city_paths})
+    Meteor.call('getCityPaths', city_id, (error, city_paths)=>{
+      if(!error) this.setState({city_id, view, city_name, city_paths})
     })
   }
 
   goHome(){
-    this.setState({view: 1, city: null, city_paths: []})
+    this.setState({view: 1, city_id: null, city_paths: []})
   }
 
   render() {
@@ -38,7 +39,7 @@ class App extends Component {
       case 1:
         return <Home selectCity={this.selectCity} goHome={this.goHome}/>
       case 2:
-        return <CityPaths city_paths={this.state.city_paths} goHome={this.goHome}/>
+        return <CityPaths cityPaths={this.state.city_paths} cityName={this.state.city_name} goHome={this.goHome}/>
       default:
         return
     }

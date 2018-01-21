@@ -13,7 +13,6 @@ Meteor.methods({
   getCityPhoto(city_id) {
     try {
       let photo = HTTP.get('http://papi.minube.com/pois?lang=es&city_id='+city_id+'&api_key=Cayd3f')
-      console.log('photo.ph',photo)
       return photo
     } catch (error) {
       throw new Meteor.Error('oops', 'something broke');
