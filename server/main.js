@@ -25,8 +25,8 @@ Meteor.startup(() => {
       {
         name: 'Cool checkpoint',
         description: 'Yet another checkpoint',
-        lat: 45,
-        lon: -3,
+        lat: 40.4299878,
+        lon: -3.6960338,
         rating: 5
       },
       {
@@ -39,8 +39,8 @@ Meteor.startup(() => {
       {
         name: 'Another checkpoint 1',
         description: 'Some checkpoint 2',
-        lat: 44,
-        lon: -3,
+        lat: 40.465511,
+        lon: -3.6187617,
         rating: 4
       }
     ]

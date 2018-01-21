@@ -20,27 +20,40 @@ export default MapThumb = compose(
   lifecycle({
     componentDidMount() {
       const DirectionsService = new google.maps.DirectionsService();
-      console.log(this.props)
-      DirectionsService.route({
-        origin: new google.maps.LatLng(41.8507300, -87.6512600),
-        destination: new google.maps.LatLng(41.8525800, -87.6514100),
-        travelMode: google.maps.TravelMode.WALKING,
-      }, (result, status) => {
+      let checkpoints = this.props.path.checkpoints
+      console.log(checkpoints)
+      if(checkpoints.length < 2)return
+      let originCp = checkpoints[0]
+      let origin = new google.maps.LatLng(originCp.lat, originCp.lon)
+      let destinationCp = checkpoints[ checkpoints.length - 1 ]
+      let destination = new google.maps.LatLng(destinationCp.lat, destinationCp.lon)
+      let waypoints = []
+      console.log(originCp,destinationCp)
+      for( let i = 1; i < checkpoints.length - 1; i++ ){
+        let cp = checkpoints[i]
+        console.log(cp)
+        waypoints.push(new google.maps.LatLng(cp.lat, cp.lon))
+      }
+      let travelMode = google.maps.TravelMode.WALKING
+      DirectionsService.route({origin, destination, travelMode}, (result, status) => {
         if (status === google.maps.DirectionsStatus.OK) {
           this.setState({
             directions: result,
           });
         } else {
-          console.error(`error fetching directions ${result}`);
+          console.error('error fetching directions',result, status);
         }
       });
     }
   })
 )(props =>
   <GoogleMap
-    defaultZoom={7}
-    defaultCenter={new google.maps.LatLng(41.8507300, -87.6512600)}
+    defaultZoom={10}
+    defaultCenter={new google.maps.LatLng(40.4299878,-3.6960338)}
+    disableDefaultUI={true}
   >
-    {props.directions && <DirectionsRenderer directions={props.directions} />}
+    {props.directions && <DirectionsRenderer
+      preserveViewport={true}
+      directions={props.directions} />}
   </GoogleMap>
 )
