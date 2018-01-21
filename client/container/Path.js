@@ -29,9 +29,9 @@ class Path extends Component {
     super(props)
   }
 
-  drawCheckpointCard(checkpoint) {
+  drawCheckpointCard(checkpoint, idx) {
     return (
-      <Checkpoint checkpoint={checkpoint} />
+      <Checkpoint key={idx} checkpoint={checkpoint} />
     )
   }
 

@@ -24,6 +24,7 @@ class App extends Component {
 
 
   selectCity(city_id, city_name){
+    console.log(city_id)
     const view = 1
     if(city_id != null || city_id == this.state.city_id) {
       view = 2

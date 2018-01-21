@@ -4,9 +4,29 @@ import React, { Component } from 'react';
 class Checkpoint extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      url: null,
+      price: null
+    }
+
+  }
+
+  componentDidMount(){
+    Meteor.call('getHotels', this.props.checkpoint.lat, this.props.checkpoint.lon, (error, hotelsNear)=>{
+      console.log(error, hotelsNear)
+      console.log("Link" + hotelsNear[0].href)
+      console.log("Precio: "+hotelsNear[0].lowestRate + "€")
+      console.log(hotelsNear[0].key)
+      this.setState({
+        url:'https://www.hotelscombined.es/Hotel/' + hotelsNear[0].key.split(":")[1] + '.htm',
+        price: hotelsNear[0].lowestRate
+      })
+    })
   }
 
   drawCheckpointCard(checkpoint) {
+    const {price, url} = this.state
     return (
       <div className="path_card checkpoint_card">
         <div className="checkpoint">
@@ -18,12 +38,20 @@ class Checkpoint extends Component {
               <div className="element rating">
                 {checkpoint.rating} <i class="fa fa-star" aria-hidden="true"></i>
               </div>
-              <div className="hotels">
-                <div className="cost">
-                  134 €
-                </div>
-                <i class="hotel_left fa fa-bed" aria-hidden="true"></i>
-              </div>
+              {
+                price != null && url != null ?
+
+                  <a className="hotels" target="_blank" href={url}>
+                    <div className="cost">
+                      {price} €
+                    </div>
+                    <i class="hotel_left fa fa-bed" aria-hidden="true"></i>
+                  </a>
+
+                :
+
+                  null
+              }
             </div>
           </div>
         </div>
