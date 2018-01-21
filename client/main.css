@@ -1,9 +1,10 @@
 /* CSS declarations go here */
 body {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 
   font-size: 30px;
   line-height: 30px;
@@ -16,8 +17,58 @@ body {
   padding: 0;
 }
 
-header {
+.home_header {
   flex: 0.5;
+  background-color: white;
+}
+
+.map {
+  height: 100px;
+  opacity: 0.6;
+}
+.map button {
+  visibility: hidden;
+}
+.map div[role=button] {
+  visibility: hidden;
+}
+.map .gm-svpc, .map .gmnoprint, .map .gm-style-pbc {
+  visibility: hidden;
+}
+
+
+.top_nav {
+  height: 70px;
+  background-color: #eaeaea;
+  padding: 5px 20px;
+  box-sizing: border-box;
+
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+}
+
+.app_name {
+  color: #e74c3c;
+  width: auto;
+  display: inline;
+  line-height: 70px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  /*border: 5px solid #eee;*/
+  border: 5px solid #e96c9c;
+  box-sizing: border-box;
+  float: right;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
 }
 
 ul {
@@ -29,7 +80,7 @@ ul {
 .container {
   width: 100vw;
   height: 100%;
-  background-color: #222;
+  background-color: #eee;
   display: flex;
   flex-direction: column;
 }
@@ -37,9 +88,9 @@ ul {
 .cityFinder {
   margin: 0 10px;
   flex: 0.4;
-  background-color: gray;
   overflow: hidden;
   box-sizing: border-box;
+  z-index: 1;
 }
 
 .cityFinder .input {

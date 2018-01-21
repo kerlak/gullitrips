@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import CityFinder from '../cities/CityFinder'
+import TopNav from './TopNav'
+import MapWithADirectionsRenderer from '../MyMapComponent'
 
 // App component - represents the whole app
 class Home extends Component {
@@ -10,7 +12,12 @@ class Home extends Component {
   render() {
     return (
       <div className="container">
-        <header></header>
+        <div className="home_header">
+          <TopNav />
+          <div className="map">
+            {React.createElement(MapWithADirectionsRenderer, {})}
+          </div>
+        </div>
         <CityFinder selectCity={this.props.selectCity}/>
       </div>
     );
