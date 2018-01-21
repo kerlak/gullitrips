@@ -30,9 +30,18 @@ class Path extends Component {
 
   drawCheckpointCard(checkpoint) {
     return (
-      <div className="path_card">
-        <div className="path_hour_rating">
-          {checkpoint.name}
+      <div className="path_card checkpoint_card">
+        <div className="checkpoint">
+          <div className="horizontal_checkpoint">
+            <div className="point"></div>
+            <div className="data">
+              <div className="element">{checkpoint.name}</div>
+              <div className="element description">{checkpoint.description}</div>
+              <div className="element rating">
+                {checkpoint.rating} <i class="fa fa-star" aria-hidden="true"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -51,6 +60,7 @@ class Path extends Component {
           </div>
         </div>
           <div className="path_list">
+            <div className="vertical_line"></div>
             {cityPath.checkpoints.map(this.drawCheckpointCard)}
           </div>
       </div>
