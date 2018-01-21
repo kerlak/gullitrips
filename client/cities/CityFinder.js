@@ -25,7 +25,7 @@ class CityFinder extends Component {
 
   getSimilarCities(name) {
     if(!name)return
-    Meteor.call('getCities', name, (error, similarCities)=>{
+    Meteor.call('getCities', name + "*", (error, similarCities)=>{
       this.setState({similarCities})
     })
   }
