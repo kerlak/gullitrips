@@ -64,7 +64,8 @@ export default MapThumb = compose(
       defaultOptions={{
         suppressMarkers: true,
         preserveViewport: false,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+        routeIndex : props.selectedIdx
       }}
       directions={props.directions} />}
   </GoogleMap>
