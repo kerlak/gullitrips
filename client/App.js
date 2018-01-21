@@ -37,7 +37,7 @@ class App extends Component {
   }
 
   goHome(){
-    this.setState({view: 1, city_id: null, city_paths: []})
+    this.setState({view: 1, city_id: null, city_paths: [], city_path: null})
   }
 
   render() {
