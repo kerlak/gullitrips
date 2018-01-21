@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from './container/Home'
+import CityPaths from './container/CityPaths'
 import MapThumb from './paths/MapThumb'
 
 // App component - represents the whole app
@@ -9,7 +10,8 @@ class App extends Component {
 
     this.state = {
       view: 1,
-      city: null
+      city: null,
+      paths: []
     }
 
     this.selectCity = this.selectCity.bind(this)
@@ -35,9 +37,11 @@ class App extends Component {
   render() {
     switch(this.state.view){
       case 1:
-       return <Home selectCity={this.selectCity}/>
+        return <Home selectCity={this.selectCity}/>
+      case 2:
+        return <CityPaths paths={this.state.paths}/>
       default:
-        return <div>{React.createElement(MapThumb, {path:this.state.paths[0]})}</div>
+        return
     }
   }
 

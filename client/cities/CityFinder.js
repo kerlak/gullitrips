@@ -49,7 +49,7 @@ class CityFinder extends Component {
         </div>
         {
           cities.length > 0 ?
-            <ul>
+            <ul className="cityList">
               { cities.map(this.renderCity) }
             </ul>
           :
