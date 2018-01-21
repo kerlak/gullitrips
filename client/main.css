@@ -1,4 +1,12 @@
-/* CSS declarations go here */
+*{
+  font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+  font-family: 'LogoFont';
+  src: url('./fonts/logo-font.ttf') format('ttf');
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -7,6 +15,10 @@ body {
 
   font-size: 30px;
   line-height: 30px;
+}
+
+#logo {
+  font-family: 'LogoFont';
 }
 
 #body {
