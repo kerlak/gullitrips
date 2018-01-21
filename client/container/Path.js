@@ -40,6 +40,12 @@ class Path extends Component {
               <div className="element rating">
                 {checkpoint.rating} <i class="fa fa-star" aria-hidden="true"></i>
               </div>
+              <div className="hotels">
+                <div className="cost">
+                  134 €
+                </div>
+                <i class="hotel_left fa fa-bed" aria-hidden="true"></i>
+              </div>
             </div>
           </div>
         </div>

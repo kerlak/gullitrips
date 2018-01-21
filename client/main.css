@@ -200,9 +200,12 @@ ul {
   border-radius: 10px;
   box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
   margin: 10px;
+  transition: all 0.3 ease-in-out;
 }
 
-
+.path_card:hover {
+  box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.6);
+}
 
 
 .city_intro {
@@ -273,7 +276,7 @@ ul {
   height: 100% !important;
   float: left;
   background-color: #9b59b6;
-  opacity: 0.6;
+  opacity: 0.4;
   position: absolute;
   margin-left: 30px;
 }
@@ -309,4 +312,25 @@ ul {
 .description {
   text-align: right;
   font-size: 16px;
+}
+
+
+.horizontal_checkpoint .data .hotels {
+  flex: 1;
+  height: 20px;
+  color: #3498db;
+  cursor: pointer;
+}
+
+.horizontal_checkpoint .data .hotels .cost {
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.hotel_left {
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 10px;
+  float: right;
 }
