@@ -32,6 +32,9 @@ class Test extends Component {
         <header>
           <h1>Todo List</h1>
         </header>
+
+        {React.createElement(MapWithADirectionsRenderer, {})}
+        
         <ul>
           {cities.map((city,idx)=>
             <li key={idx}>

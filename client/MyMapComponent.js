@@ -32,7 +32,7 @@ import {
 } from "react-google-maps";
 
 //key=AIzaSyC4R6AN7SmujjPUIGKdyao2Kqitzr1kiRg
-const MapWithADirectionsRenderer = compose(
+export default MapWithADirectionsRenderer = compose(
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?&v=3.exp&libraries=geometry,drawing,places",
     loadingElement: <div style={{ height: `100%` }} />,
@@ -67,4 +67,4 @@ const MapWithADirectionsRenderer = compose(
   >
     {props.directions && <DirectionsRenderer directions={props.directions} />}
   </GoogleMap>
-);
+)
