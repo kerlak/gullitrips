@@ -8,9 +8,7 @@ Meteor.methods({
     try {
       let cities = HTTP.get('http://papi.minube.com/cities?lang=es&filter='+filter+'&api_key=Cayd3f')
       return cities.data
-    } catch (error) {
-      throw new Meteor.Error('oops', 'something broke');
-    }
+    } catch (error) {}
   },
   getCityPhoto(city_id) {
     try {

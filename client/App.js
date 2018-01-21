@@ -23,14 +23,11 @@ class App extends Component {
     if(city != null || city == this.state.city) {
       view = 2
     }
-    Meteor.call('getCityPaths', city, (error, paths)=>{
-      console.log(paths)
-      if(!error) this.setState({city, view, paths})
+    Meteor.call('getCityPaths', city, (error, city_paths)=>{
+      console.log('citytpaaath',city_paths)
+      if(!error) this.setState({city, view, city_paths})
     })
 
-    Meteor.call('getCityPhoto', city, (error, paths)=>{
-      console.log(paths)
-    })
 
   }
 
@@ -39,7 +36,7 @@ class App extends Component {
       case 1:
         return <Home selectCity={this.selectCity}/>
       case 2:
-        return <CityPaths paths={this.state.paths}/>
+        return <CityPaths city_paths={this.state.city_paths}/>
       default:
         return
     }

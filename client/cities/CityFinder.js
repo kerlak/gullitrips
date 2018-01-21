@@ -32,8 +32,8 @@ class CityFinder extends Component {
 
   renderCity(city) {
     return <City
-                key={city._id}
-                id={city._id}
+                key={city.city_id}
+                id={city.city_id}
                 selectCity={this.props.selectCity}
                 name={city.city_name}
                 country={city.country_name}

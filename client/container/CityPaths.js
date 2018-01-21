@@ -26,12 +26,15 @@ class CityPaths extends Component {
   }
 
   render() {
-    const { paths } = this.props
+    const { city_paths } = this.props
+    console.log('dentro de cytypaths', city_paths)
+    let paths = city_paths.paths
     return (
       <div className="container">
         <div className="home_header">
           <TopNav />
         </div>
+          <img scr={city_paths.photo_url} style={{width:'100%'}}/>
           <div className="path_list">
             {paths.map(this.drawPathCard)}
           </div>
