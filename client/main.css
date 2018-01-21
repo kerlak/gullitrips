@@ -4,7 +4,15 @@
 
 @font-face {
   font-family: 'LogoFont';
-  src: url('./fonts/logo-font.ttf') format('ttf');
+  src: url(/fonts/logo-font.ttf);
+
+
+}
+
+#logo {
+  font-family: 'LogoFont';
+  font-size: 40px;
+  color:#c0392b;
 }
 
 body {
@@ -17,9 +25,7 @@ body {
   line-height: 30px;
 }
 
-#logo {
-  font-family: 'LogoFont';
-}
+
 
 #body {
   width: 100vw;
