@@ -44,7 +44,7 @@ if( Paths.find().fetch().length == 0 ){
         lat: 43.3890182,
         lon: -4.1083872,
         rating: 5
-      // },
+      }
       // {
       //   name: 'Universidad de Comillas',
       //   description: 'Una legendaria Universidad dominada por la historia que cuentan sus piedras. Edifico ecléctico, en tanto se mezclan rasgos mudéjares y neoclásicos, alberga en la actualidad diferentes ciclos de enseñanza del castellano para extranjeros. Fue andada construir por el Marqués de Comillas y cedida al Vaticano en el siglo XIX.',

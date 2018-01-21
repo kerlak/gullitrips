@@ -57,7 +57,6 @@ export default MapThumb = compose(
       disableDefaultUI: true
     }}
     defaultZoom={10}
-    defaultCenter={new google.maps.LatLng(40.4299878,-3.6960338)}
     disableDefaultUI={true}
     draggable={false}
   >
