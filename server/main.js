@@ -29,14 +29,35 @@ Meteor.startup(() => {
       {
         name: 'Another checkpoint',
         description: 'Some checkpoint',
-        lat: 44,
-        lon: -4,
+        lat: 40.4531989,
+        lon: -3.6965338,
         rating: 4
       },
       {
         name: 'Another checkpoint 1',
         description: 'Some checkpoint 2',
         lat: 40.465511,
+        lon: -3.6187617,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 2',
+        description: 'Some checkpoint 2',
+        lat: 40.475511,
+        lon: -3.6187617,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 3',
+        description: 'Some checkpoint 2',
+        lat: 40.475511,
+        lon: -3.6787617,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 4',
+        description: 'Some checkpoint 2',
+        lat: 40.485511,
         lon: -3.6187617,
         rating: 4
       }
