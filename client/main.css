@@ -39,6 +39,8 @@ body {
 }
 
 .map {
+  z-index: 0;
+  position: relative;
   height: 100px;
   flex: 1;
   line-height: 90px;
@@ -89,6 +91,8 @@ body {
 
 
 .top_nav {
+  z-index: 1;
+  position: relative;
   height: 70px;
   background-color: #eaeaea;
   padding: 5px 20px;
