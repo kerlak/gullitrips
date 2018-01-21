@@ -27,11 +27,20 @@ class Path extends Component {
 
   constructor(props) {
     super(props)
+
+    this.state = {
+      selectedIdx: null
+    }
+  }
+
+  selectMap(idx){
+    console.log("select map checkpoint")
+    this.setState({selectedIdx: idx})
   }
 
   drawCheckpointCard(checkpoint, idx) {
     return (
-      <Checkpoint key={idx} checkpoint={checkpoint} />
+      <Checkpoint onClick={() => this.selectMap(idx)} key={idx} checkpoint={checkpoint} />
     )
   }
 
@@ -43,7 +52,7 @@ class Path extends Component {
           <TopNav goHome={this.props.goHome}/>
           <div className="city_intro">
             <div className="checkpoint_map">
-              {React.createElement(MapThumb, {path:cityPath})}
+              {React.createElement(MapThumb, {path:cityPath, selectedIdx: this.state.selectedIdx})}
             </div>
           </div>
         </div>

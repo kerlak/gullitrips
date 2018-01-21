@@ -57,7 +57,6 @@ export default MapThumb = compose(
       disableDefaultUI: true
     }}
     defaultZoom={10}
-    defaultCenter={new google.maps.LatLng(40.4299878,-3.6960338)}
     disableDefaultUI={true}
     draggable={false}
   >
@@ -65,7 +64,8 @@ export default MapThumb = compose(
       defaultOptions={{
         suppressMarkers: true,
         preserveViewport: false,
-        disableDefaultUI: true
+        disableDefaultUI: true,
+        routeIndex : props.selectedIdx
       }}
       directions={props.directions} />}
   </GoogleMap>
