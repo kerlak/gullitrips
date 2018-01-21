@@ -19,10 +19,12 @@ class App extends Component {
 
     this.selectCity = this.selectCity.bind(this)
     this.goHome = this.goHome.bind(this)
+    this.selectPath = this.selectPath.bind(this)
   }
 
 
   selectCity(city_id, city_name){
+    console.log(city_id)
     const view = 1
     if(city_id != null || city_id == this.state.city_id) {
       view = 2
@@ -34,6 +36,7 @@ class App extends Component {
   }
 
   selectPath(path){
+    console.log(path)
     this.setState({view: 3, city_path: path})
   }
 
@@ -49,7 +52,7 @@ class App extends Component {
         return <CityPaths
                     cityPaths={this.state.city_paths}
                     cityName={this.state.city_name}
-                    selectPath={this.state.selectPath}
+                    selectPath={this.selectPath}
                     goHome={this.goHome}
                 />
       case 3:

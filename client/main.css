@@ -51,7 +51,7 @@ body {
   margin: 5px;
 }
 
-.path_card .path_hour_rating {
+.path_hour_rating {
   padding: 10px;
   box-sizing: border-box;
   display: flex;
@@ -59,13 +59,13 @@ body {
   width: 90px;
 }
 
-.path_hour_rating .hour{
+.hour{
   flex: 10;
   color: hotpink;
   line-height: 40px;
 }
 
-.path_hour_rating .rating{
+.rating{
   flex: 1;
   font-size: 20px;
   color: goldenrod;
@@ -200,9 +200,12 @@ ul {
   border-radius: 10px;
   box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
   margin: 10px;
+  transition: all 0.3 ease-in-out;
 }
 
-
+.path_card:hover {
+  box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.6);
+}
 
 
 .city_intro {
@@ -214,14 +217,32 @@ ul {
   position: absolute;
   max-height: 100%;
   width: 100%;
+  z-index: 1;
 
-  -webkit-box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
-  -moz-box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
-  box-shadow: inset 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+}
+
+.city_intro .checkpoint_map {
+  position: relative;
+  max-height: 100%;
+  width: 100%;
+  z-index: 0;
+  height: 40vh !important;
+
+  -webkit-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 7px 20px 0px rgba(0,0,0,0.6);
+}
+
+.checkpoint_map > div:first-child {
+  height: 40vh !important;
 }
 
 .city_intro .city_name {
   position: absolute;
+  z-index: 1;
   bottom: 0;
   padding: 10px;
   padding-top: 40px;
@@ -234,4 +255,82 @@ ul {
   background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 50%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.33) 50%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+.checkpoint_card .checkpoint {
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.checkpoint_card {
+  background-color: #eaeaea;
+}
+
+.path_list .vertical_line {
+  display: block;
+  width: 10px;
+  height: 100% !important;
+  float: left;
+  background-color: #9b59b6;
+  opacity: 0.4;
+  position: absolute;
+  margin-left: 30px;
+}
+
+.checkpoint .horizontal_checkpoint {
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontal_checkpoint .point {
+  display: block;
+  align-self: center;
+  height: 30px;
+  width: 30px;
+  background-color: #9b59b6;
+  border-radius: 50%;
+}
+
+.horizontal_checkpoint .data {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+}
+
+.horizontal_checkpoint .data .element {
+  flex: 1;
+}
+
+.description {
+  text-align: right;
+  font-size: 16px;
+}
+
+
+.horizontal_checkpoint .data .hotels {
+  flex: 1;
+  height: 20px;
+  color: #3498db;
+  cursor: pointer;
+}
+
+.horizontal_checkpoint .data .hotels .cost {
+  float: right;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.hotel_left {
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 10px;
+  float: right;
 }
