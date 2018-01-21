@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { HTTP } from 'meteor/http'
 
 import { withTracker } from 'meteor/react-meteor-data';
 import {Cities} from '../../imports/Cities'
@@ -10,7 +11,8 @@ class CityFinder extends Component {
     super(props)
 
     this.state = {
-      similarCities: []
+      similarCities: [],
+      cities: []
     }
 
     this.getSimilarCities = this.getSimilarCities.bind(this)
@@ -22,11 +24,10 @@ class CityFinder extends Component {
   }
 
   getSimilarCities(name) {
-    let that = this
-    const similarCities = this.props.cities.filter(
-      function(city){ return that.areSimilarCities(city.name, name) }
-    )
-    this.setState({similarCities: similarCities})
+    if(!name)return
+    Meteor.call('getCities', name, (error, similarCities)=>{
+      this.setState({similarCities})
+    })
   }
 
   renderCity(city) {
@@ -34,8 +35,8 @@ class CityFinder extends Component {
                 key={city._id}
                 id={city._id}
                 selectCity={this.props.selectCity}
-                name={city.name}
-                country={city.country}
+                name={city.city_name}
+                country={city.country_name}
             />
   }
 
@@ -61,6 +62,6 @@ class CityFinder extends Component {
 
 export default withTracker(() => {
   return {
-    cities: Cities.find().fetch(),
+    //cities: Cities.find().fetch(),
   };
 })(CityFinder);

@@ -26,6 +26,10 @@ class App extends Component {
       if(!error) this.setState({city, view, paths})
     })
 
+    Meteor.call('getCityPhoto', city, (error, paths)=>{
+      console.log(paths)
+    })
+
   }
 
   render() {
