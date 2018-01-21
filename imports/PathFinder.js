@@ -20,7 +20,8 @@ Meteor.methods({
       let checkpoints = []
       for(let cp_id of path.checkpoints){
         let checkpoint = Checkpoints.findOne({_id: cp_id})
-        checkpoints.push( {name: checkpoint.name, description: checkpoint.description} )
+        //checkpoints.push( {name: checkpoint.name, description: checkpoint.description} )
+        checkpoints.push(checkpoint)
       }
       path.checkpoints = checkpoints
     }

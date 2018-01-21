@@ -25,17 +25,24 @@ Meteor.startup(() => {
       {
         name: 'Cool checkpoint',
         description: 'Yet another checkpoint',
-        lat: 45,
-        lon: -3,
+        lat: 40.4299878,
+        lon: -3.6960338,
         rating: 5
       },
-        {
-          name: 'Another checkpoint',
-          description: 'Some checkpoint',
-          lat: 44,
-          lon: -4,
-          rating: 4
-        }
+      {
+        name: 'Another checkpoint',
+        description: 'Some checkpoint',
+        lat: 44,
+        lon: -4,
+        rating: 4
+      },
+      {
+        name: 'Another checkpoint 1',
+        description: 'Some checkpoint 2',
+        lat: 40.465511,
+        lon: -3.6187617,
+        rating: 4
+      }
     ]
     var last_city_id=null
     for(let city of cities) last_city_id = Cities.insert(city)

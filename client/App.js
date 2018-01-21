@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Home from './container/Home'
+import MapThumb from './paths/MapThumb'
 
 // App component - represents the whole app
 class App extends Component {
@@ -16,12 +17,14 @@ class App extends Component {
 
 
   selectCity(city){
-    console.log("mierda")
     const view = 1
     if(city != null || city == this.state.city) {
       view = 2
     }
-    this.setState({city, view})
+    Meteor.call('getCityPaths', city, (error, paths)=>{
+      console.log(paths)
+      if(!error) this.setState({city, view, paths})
+    })
 
   }
 
@@ -30,7 +33,7 @@ class App extends Component {
       case 1:
        return <Home selectCity={this.selectCity}/>
       default:
-        return <div>{this.state.city}</div>
+        return <div>{React.createElement(MapThumb, {path:this.state.paths[0]})}</div>
     }
   }
 
