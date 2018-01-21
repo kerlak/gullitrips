@@ -32,10 +32,13 @@ export default MapThumb = compose(
       for( let i = 1; i < checkpoints.length - 1; i++ ){
         let cp = checkpoints[i]
         console.log(cp)
-        waypoints.push(new google.maps.LatLng(cp.lat, cp.lon))
+        waypoints.push({
+          location: new google.maps.LatLng(cp.lat, cp.lon),
+          stopover: true
+        })
       }
       let travelMode = google.maps.TravelMode.WALKING
-      DirectionsService.route({origin, destination, travelMode}, (result, status) => {
+      DirectionsService.route({origin, destination, travelMode, waypoints}, (result, status) => {
         if (status === google.maps.DirectionsStatus.OK) {
           this.setState({
             directions: result,
@@ -51,6 +54,7 @@ export default MapThumb = compose(
     defaultZoom={10}
     defaultCenter={new google.maps.LatLng(40.4299878,-3.6960338)}
     disableDefaultUI={true}
+    draggable={false}
   >
     {props.directions && <DirectionsRenderer
       preserveViewport={true}
